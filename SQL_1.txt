@@ -1,5 +1,5 @@
-SELECT c.login, COUNT(“track”) as deliveries
+SELECT c.login, COUNT(*) as deliveries
 FROM “Orders”
-INNER JOIN “Couriers” as c ON “courierId” = c.id
+JOIN “Couriers” as c ON “courierId” = c.id
 WHERE “inDelivery” = true
 GROUP BY c.login;
